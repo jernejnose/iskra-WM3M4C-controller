@@ -1,5 +1,6 @@
 from wm3m4c import *
 import time
+import binascii
 
 # initialise and connect to meter
 meter = WM3M4C(33)
@@ -31,5 +32,5 @@ time.sleep(1.5)
 # print out billing dataset, signature and public key
 print("signature status: ", meter.get_signature_status())
 print("billing data: ", meter.get_output_billing_dataset())
-print("signature: ", meter.get_signature())
-print("public key: ", meter.get_public_key())
+print("signature: ", binascii.hexlify(meter.get_signature()).decode('utf-8'))
+print("public key: ", binascii.hexlify(meter.get_public_key()).decode('utf-8'))

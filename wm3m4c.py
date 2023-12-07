@@ -136,8 +136,8 @@ class WM3M4C:
                 registers += self.client.read_holding_registers(data_register + i, dataset_length_registers - i,
                                                                 unit=self.deviceId).registers
 
-            decoder = BinaryPayloadDecoder.fromRegisters(registers)
-            return decoder.decode_string(dataset_length_bytes)
+        decoder = BinaryPayloadDecoder.fromRegisters(registers)
+        return decoder.decode_string(dataset_length_bytes)
 
     def get_signature(self):
         status = self.get_signature_status()
