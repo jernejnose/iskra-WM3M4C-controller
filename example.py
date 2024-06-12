@@ -4,7 +4,7 @@ import binascii
 
 # initialise and connect to meter
 meter = WM3M4C(33)
-meter.connect("/dev/ttyUSB0")
+meter.connect("COM5")
 
 #  set meter time
 meter.set_time(time.time())
